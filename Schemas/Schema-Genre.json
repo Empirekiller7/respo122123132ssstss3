@@ -1,0 +1,17 @@
+{
+  "title": "Genre",
+  "description": "representation of a music genre",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "name of the genre",
+      "type": "string",
+      "pattern": "^[A-Za-z]+$",
+      "unique": true,
+      "label": "Genres"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

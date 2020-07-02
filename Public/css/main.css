@@ -1,0 +1,22 @@
+body {
+    background: #ea7575 !important;
+    font-family: 'Times New Roman', Times, serif !important;
+    color: #000000 !important;
+}
+
+.content-selection {
+  display: inline-block;
+}
+
+div .bg-light {
+  background-color: #9999ff !important;
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
+#this_table{
+  background: #fff;
+}

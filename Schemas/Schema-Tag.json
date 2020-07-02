@@ -1,0 +1,21 @@
+{
+  "title": "Tag",
+  "description": "representation of a tag",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "name of the tag",
+      "type": "string",
+      "pattern": "^[A-Za-z]+$",
+      "unique": true,
+      "label": "Tags"
+    },
+    "description": {
+      "description": "description of a tag",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ]
+}

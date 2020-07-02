@@ -1,0 +1,52 @@
+body {
+  background-image: url(".././images/banner-bg.jpg");
+  color: white;
+}
+
+.btn-light {
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 2vh;
+}
+
+.row-option {
+  margin: 4vh;
+}
+
+#image-generate {
+  border: 0 !important;
+  background-color: transparent !important;
+}
+
+.container {
+  position: relative;
+  margin-top: 7vh;
+}
+
+label {
+  margin-right: 2vh;
+}
+
+#fonts,
+#menu {
+  width: 50%;
+}
+
+#backgroundColor {
+  width: 20%;
+}
+
+footer {
+  background-color: #f2f2f2;
+  color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1vh;
+}
+
+#button {
+  padding: 3vh !important;
+}

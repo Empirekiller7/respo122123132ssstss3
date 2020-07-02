@@ -1,0 +1,50 @@
+{
+  "title": "Song",
+  "description": "representation of a song",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "title of the song",
+      "type": "string",
+      "pattern": "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$",
+      "faker": "name.findName",
+      "label": "Songs"
+    },
+    "duration": {
+      "description": "Song Duration",
+      "type": "number"
+    },
+    "instrumental": {
+      "description": "Instrumental or not",
+      "type": "boolean"
+    },
+    "lyrics": {
+      "description": "lyrics of the song",
+      "type": "string",
+      "label": "Lyrics",
+      "features": [
+        "lyrics-finder"
+      ]
+    },
+    "foto": {
+      "type": "string",
+      "description": "Image Url",
+      "presentationMode": "image"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "references": [
+    {
+      "model": "Genre",
+      "relation": "1-M",
+      "label": "name"
+    },
+    {
+      "model": "Tag",
+      "relation": "M-M",
+      "label": "name"
+    }
+  ]
+}

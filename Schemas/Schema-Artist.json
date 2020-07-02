@@ -1,0 +1,31 @@
+{
+  "title": "Artist",
+  "description": "representation of an artist",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "name of an artist",
+      "type": "string",
+      "pattern": "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$",
+      "faker": "name.findName",
+      "label": "Artists"
+    },
+    "country": {
+      "description": "Country where the was born in",
+      "type": "string"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "references": [
+    {
+      "model": "Song",
+      "relation": "M-M"
+    },
+    {
+      "model": "Tag",
+      "relation": "M-M"
+    }
+  ]
+}

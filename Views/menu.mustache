@@ -1,0 +1,9 @@
+<div class="{{#styleMenuPosition}}col-md-2{{/styleMenuPosition}}{{^styleMenuPosition}}col-md-12{{/styleMenuPosition}}">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav {{menuPosition}}" >
+      {{#schemas}}             
+            <li class="nav-item"><a class="nav-link" href="{{href}}">{{name}}</a></li>
+        {{/schemas}}
+    </ul>
+</nav>
+</div>

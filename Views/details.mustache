@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="../../../css/main.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="icon" type="image/png" href="./images/favicon.png" />
+    <script src="./js/bootstrap.min.js"></script>    
+ <script>             
+ {{#hasReferences}}             
+    function loadValues(model,values,label,controlId, isManyToMany){
+        var xhr = new XMLHttpRequest();
+        let route;
+        isManyToMany == true ? route = `../../../api/${model}/{{classValue}}/{{idValue}}` : route = `../../../api/${model}/${values}`;
+        xhr.open("GET", route, true);
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState === 4 && xhr.status === 200) {
+                var control = document.getElementById(controlId);
+                var response = JSON.parse(this.responseText);
+                console.log(response);
+                if(response.constructor === Array)
+                control.innerHTML = response.map(row => { return row[label] }).join();
+                else
+                control.innerHTML = response[label];
+            }
+            }
+            xhr.send();
+    }
+        window.onload = function() {
+            {{#references}}
+                loadValues('{{model}}','{{values}}','{{labelRef}}','label{{model}}value', {{isManyToMany}});
+            {{/references}}
+        }
+    {{/hasReferences}}
+</script> 
+<title>{{title}}</title> 
+</head>     
+    <body>         
+        {{#properties}}         
+        <div>             
+            <label>{{name}}:</label>             
+            {{#image}}<img src="{{value}}" width="138" height="138"></img> {{/image}}
+            {{#video}}<iframe src="{{value}}" width="138" height="138"></iframe> {{/video}}
+            {{#text}}<label>{{value}}</label>{{/text}}         
+        </div>         
+        {{/properties}}
+        {{#references}}             
+            <label>{{model}}:</label>             
+            <label id="label{{model}}value"></label>
+            </br>
+        {{/references}}      
+    </body> 
+</html>

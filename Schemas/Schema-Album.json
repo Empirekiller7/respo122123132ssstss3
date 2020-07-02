@@ -1,0 +1,40 @@
+{
+  "title": "Album",
+  "description": "representation of an artist's album",
+  "type": "object",
+  "properties": {
+    "name": {
+      "description": "name of the album",
+      "type": "string",
+      "pattern": "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$",
+      "minLenght": 5,
+      "faker": "name.findName",
+      "label": "Albums"
+    },
+    "foto": {
+      "type": "string",
+      "description": "Image Url",
+      "presentationMode": "image"
+    }
+  },
+  "required": [
+    "name"
+  ],
+  "references": [
+    {
+      "model": "Artist",
+      "relation": "M-M",
+      "label": "name"
+    },
+    {
+      "model": "Song",
+      "relation": "M-M",
+      "label": "name"
+    },
+    {
+      "model": "Tag",
+      "relation": "M-M",
+      "label": "name"
+    }
+  ]
+}
